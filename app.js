@@ -22,6 +22,55 @@ $(document).ready(function(){
 //         targets: 0,
 //       },
 //     ],
+//     dom: 'Bfrtip',
+//     buttons: [
+//        {
+//           extend: 'pdfHtml5',
+//           download: 'open'
+//        }
+//     ],
+    dom: 'Bfrtip',
+    buttons: [
+      {
+        extend: 'pdf',
+        pageSize: 'A4',
+        // https://stackoverflow.com/questions/35642802/datatables-export-pdf-with-100-width
+        //https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
+        customize:function(doc){
+          // doc.content[1].table.widths = Array(doc.content[1].table.body[0].length + 1).join('*').split('');
+          doc.content[1].table.widths = ['auto', '*','*'];
+          // var colCount = new Array();
+          //   $('#tableID').find('tbody tr:first-child td').each(function(){
+          //       if($(this).attr('colspan')){
+          //           for(var i=0;i<=$(this).attr('colspan');$i++){
+          //               colCount.push('*');
+          //           }
+          //       }else{ colCount.push('*'); }
+          //   });
+          //   doc.content[1].table.widths = colCount;
+        },
+        exportOptions:{
+          columns:[0,2,3],
+          modifier:{
+            page:'all'
+          }
+        },
+        download: 'open'
+      }
+    ],
+//     buttons: [
+//       'copyHtml5',
+//       'excelHtml5',
+//       'csvHtml5',
+//       {
+//         extends: 'pdf',
+//         exportOptions:{
+//           modifier: {
+//             page:'all'
+//           }
+//         }
+//       }
+//     ],
     order: [[1, 'asc']],
     ajax: {
       url: url+"/products?limit=150&skip=85",
@@ -30,7 +79,7 @@ $(document).ready(function(){
     columnDefs:[
     // this is for tricking data columns for working with index number on table, using this for skipping data on column 0
       {
-        data: 'title',
+        data: 'id',
         searchable: false,
         orderable: false,
         targets: 0,
