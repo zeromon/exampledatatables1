@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap4.min.css"
+    />
+    <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css"> -->
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+
+        #new-list li {
+            display: inline-block;
+            width: 100px;
+            border: 1px #CCC solid;
+            padding: 10px;
+            margin: 3px;
+        }
+
+        #new-list li p {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        .dataTables_length {
+            width: 100%;  
+        }
+
+        .dataTables_filter {
+            width: 100%;  
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Datatable with non tabular layout</h1>
+        <table id="example" class="display" style="display: none;" cellspacing="0" width="100%"></table>
+        <div class="row">
+            <ul id="new-list" style="display: none;" class="col-md-6 offset-md-3"></ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap4.min.js"></script>
+<script src="example2.js"></script>
+</html>
