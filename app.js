@@ -38,7 +38,10 @@ $(document).ready(function(){
         //https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
         customize:function(doc){
           // doc.content[1].table.widths = Array(doc.content[1].table.body[0].length + 1).join('*').split('');
+          console.log(doc);
+          //change width each column
           doc.content[1].table.widths = ['auto', '*','*'];
+          doc.styles.tableHeader.fillColor='#ff5500';
           // var colCount = new Array();
           //   $('#tableID').find('tbody tr:first-child td').each(function(){
           //       if($(this).attr('colspan')){
